@@ -1,4 +1,4 @@
-# robot-arm-joystick-with-smoothing.py
+ # robot-arm-joystick-with-smoothing.py
 import time, board, analogio, digitalio, pwmio
 from adafruit_motor import servo
 
@@ -20,16 +20,16 @@ base_left = digitalio.DigitalInOut(board.GP19)
 base_left.switch_to_input(pull=digitalio.Pull.UP)
 
 # Setup servos
-pwm = pwmio.PWMOut(board.GP14, frequency=50)
+pwm = pwmio.PWMOut(board.GP14, frequency=50) # orange
 x_servo = servo.Servo(pwm, min_pulse=500, max_pulse=2500)
 
-pwm2 = pwmio.PWMOut(board.GP15, frequency=50)
-y_servo = servo.Servo(pwm2, min_pulse=500, max_pulse=2500)
+pwm2 = pwmio.PWMOut(board.GP15, frequency=50) # blue
+y_servo = servo.Servo(pwm2, min_pulse=500, max_pulse=2500) 
 
-pwm3 = pwmio.PWMOut(board.GP13, frequency=50)
+pwm3 = pwmio.PWMOut(board.GP13, frequency=50) # yellow
 claw_servo = servo.Servo(pwm3, min_pulse=250, max_pulse=2300)
 
-pwm4 = pwmio.PWMOut(board.GP12, frequency=50)
+pwm4 = pwmio.PWMOut(board.GP12, frequency=50) # white
 base_servo = servo.Servo(pwm4, min_pulse=500, max_pulse=2500)
 
 x_servo.angle = 90
